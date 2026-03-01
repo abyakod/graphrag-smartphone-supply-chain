@@ -36,7 +36,9 @@ This project models the entire smartphone supply chain as a graph with **7 node 
 The Architecture 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/3e6dd69e-8ffe-4a2f-b7ed-4ae12edecb49" />
 
+
 The Graph Schema:
+
 <img width="407" height="206" alt="image" src="https://github.com/user-attachments/assets/1adc8562-5073-42a0-ade8-dcb0c68c2a37" />
 
 ## ⚡ Quick Start

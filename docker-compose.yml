@@ -1,0 +1,75 @@
+version: '3.9'
+
+services:
+  memgraph:
+    image: memgraph/memgraph-mage:latest
+    container_name: phonegraph-memgraph
+    ports:
+      - "7687:7687"   # Bolt protocol
+      - "7444:7444"   # Monitoring
+      - "3000:3000"   # Memgraph Lab UI
+    command: ["--schema-info-enabled=true", "--log-level=WARNING"]
+    volumes:
+      - memgraph_data:/var/lib/memgraph
+    healthcheck:
+      test: ["CMD-SHELL", "echo 'RETURN 1;' | mgconsole || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+    restart: unless-stopped
+    networks:
+      - phonegraph-net
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: phonegraph-api
+    ports:
+      - "8000:8000"
+    environment:
+      - MEMGRAPH_HOST=memgraph
+      - MEMGRAPH_PORT=7687
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    env_file:
+      - .env
+    depends_on:
+      memgraph:
+        condition: service_healthy
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - .:/app
+    restart: unless-stopped
+    networks:
+      - phonegraph-net
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: phonegraph-dashboard
+    ports:
+      - "8501:8501"
+    environment:
+      - MEMGRAPH_HOST=memgraph
+      - MEMGRAPH_PORT=7687
+      - API_BASE_URL=http://api:8000
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    env_file:
+      - .env
+    depends_on:
+      - api
+    command: streamlit run dashboard/app.py --server.port 8501 --server.address 0.0.0.0
+    volumes:
+      - .:/app
+    restart: unless-stopped
+    networks:
+      - phonegraph-net
+
+volumes:
+  memgraph_data:
+
+networks:
+  phonegraph-net:
+    driver: bridge

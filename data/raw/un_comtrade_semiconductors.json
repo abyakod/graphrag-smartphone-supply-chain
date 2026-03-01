@@ -1,0 +1,116 @@
+{
+    "trade_flows": [
+        {
+            "from": "Taiwan",
+            "to": "USA",
+            "value_usd_billions": 48.2,
+            "year": 2023,
+            "category": "semiconductors"
+        },
+        {
+            "from": "Taiwan",
+            "to": "China",
+            "value_usd_billions": 52.1,
+            "year": 2023,
+            "category": "semiconductors"
+        },
+        {
+            "from": "Taiwan",
+            "to": "Japan",
+            "value_usd_billions": 15.4,
+            "year": 2023,
+            "category": "semiconductors"
+        },
+        {
+            "from": "Taiwan",
+            "to": "South Korea",
+            "value_usd_billions": 12.8,
+            "year": 2023,
+            "category": "semiconductors"
+        },
+        {
+            "from": "South Korea",
+            "to": "USA",
+            "value_usd_billions": 22.1,
+            "year": 2023,
+            "category": "semiconductors"
+        },
+        {
+            "from": "South Korea",
+            "to": "China",
+            "value_usd_billions": 31.6,
+            "year": 2023,
+            "category": "semiconductors"
+        },
+        {
+            "from": "China",
+            "to": "USA",
+            "value_usd_billions": 18.3,
+            "year": 2023,
+            "category": "semiconductors"
+        },
+        {
+            "from": "Japan",
+            "to": "Taiwan",
+            "value_usd_billions": 8.7,
+            "year": 2023,
+            "category": "semiconductor_equipment"
+        },
+        {
+            "from": "Japan",
+            "to": "South Korea",
+            "value_usd_billions": 6.2,
+            "year": 2023,
+            "category": "semiconductor_materials"
+        },
+        {
+            "from": "Netherlands",
+            "to": "Taiwan",
+            "value_usd_billions": 11.4,
+            "year": 2023,
+            "category": "semiconductor_equipment"
+        },
+        {
+            "from": "Netherlands",
+            "to": "South Korea",
+            "value_usd_billions": 5.8,
+            "year": 2023,
+            "category": "semiconductor_equipment"
+        },
+        {
+            "from": "USA",
+            "to": "Taiwan",
+            "value_usd_billions": 7.9,
+            "year": 2023,
+            "category": "chip_design_ip"
+        },
+        {
+            "from": "China",
+            "to": "Japan",
+            "value_usd_billions": 4.5,
+            "year": 2023,
+            "category": "rare_earth_materials"
+        },
+        {
+            "from": "DRC",
+            "to": "China",
+            "value_usd_billions": 3.2,
+            "year": 2023,
+            "category": "cobalt"
+        },
+        {
+            "from": "Australia",
+            "to": "China",
+            "value_usd_billions": 5.8,
+            "year": 2023,
+            "category": "lithium"
+        },
+        {
+            "from": "Chile",
+            "to": "China",
+            "value_usd_billions": 2.9,
+            "year": 2023,
+            "category": "lithium"
+        }
+    ]
+}

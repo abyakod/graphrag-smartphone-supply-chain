@@ -1,0 +1,36 @@
+{
+    "companies": [
+        {
+            "name": "Apple",
+            "ticker": "AAPL",
+            "risk_factors": [
+                "Single-source dependency on TSMC for all A-series and M-series chip fabrication",
+                "Concentrated assembly operations in China (Foxconn/Pegatron), with India expansion underway",
+                "Supply chain spans 43 countries across 6 continents",
+                "Exposure to China-Taiwan geopolitical tensions impacting 92% of advanced chip supply",
+                "Tariff exposure: 32% tariff on Taiwan imports (2025) could add $120-200 per iPhone"
+            ]
+        },
+        {
+            "name": "TSMC",
+            "ticker": "TSM",
+            "risk_factors": [
+                "Geographic concentration: 92% of advanced chip manufacturing in Taiwan",
+                "Taiwan is 160km from mainland China — military blockade risk assessed at elevated",
+                "Sole supplier of sub-5nm chips globally — no alternative manufacturer exists",
+                "Water scarcity risk: Fab operations require 156,000 tons of water daily",
+                "EUV machine dependency on ASML — single vendor for most critical equipment"
+            ]
+        },
+        {
+            "name": "Qualcomm",
+            "ticker": "QCOM",
+            "risk_factors": [
+                "High dependency on TSMC for Snapdragon chip fabrication",
+                "Gallium dependency for 5G RF front-end modules — China controls 80% of supply",
+                "Licensing revenue vulnerable to customer in-house chip development (Apple modem)",
+                "Export restriction risk: US-China tensions affecting chip sales to Chinese OEMs"
+            ]
+        }
+    ]
+}

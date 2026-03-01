@@ -1,0 +1,238 @@
+{
+    "description": "20 multi-hop supply chain questions designed to showcase GraphRAG's advantage over vanilla RAG. Each question requires traversing multiple relationships to answer correctly.",
+    "questions": [
+        {
+            "id": 1,
+            "question": "What happens to iPhone 16 Pro prices if China bans Gallium exports?",
+            "expected_hops": 4,
+            "required_traversal": "Country → Material → Component → Device",
+            "expected_answer_contains": [
+                "iPhone 16 Pro",
+                "Gallium",
+                "China",
+                "price"
+            ],
+            "category": "disruption_analysis"
+        },
+        {
+            "id": 2,
+            "question": "Trace the complete supply chain path from Cobalt in DRC to the iPhone 16 Pro battery.",
+            "expected_hops": 5,
+            "required_traversal": "Material → Country → Component → Device",
+            "expected_answer_contains": [
+                "Cobalt",
+                "DRC",
+                "iPhone"
+            ],
+            "category": "path_tracing"
+        },
+        {
+            "id": 3,
+            "question": "Which company is the most critical single point of failure in the global smartphone supply chain?",
+            "expected_hops": 3,
+            "required_traversal": "Company → Component → Device (aggregated)",
+            "expected_answer_contains": [
+                "TSMC"
+            ],
+            "category": "centrality_analysis"
+        },
+        {
+            "id": 4,
+            "question": "If TSMC shuts down, which flagship phones can still be manufactured and why?",
+            "expected_hops": 3,
+            "required_traversal": "Company → Component → Device",
+            "expected_answer_contains": [
+                "Samsung",
+                "Exynos"
+            ],
+            "category": "disruption_analysis"
+        },
+        {
+            "id": 5,
+            "question": "How many hops in the supply chain separate Ukrainian Neon gas from a Samsung Galaxy S25 Ultra?",
+            "expected_hops": 4,
+            "required_traversal": "Country → Material → Component → Device",
+            "expected_answer_contains": [
+                "Neon",
+                "Ukraine",
+                "Samsung"
+            ],
+            "category": "path_tracing"
+        },
+        {
+            "id": 6,
+            "question": "What is the total contract value of all suppliers feeding into Apple's supply chain?",
+            "expected_hops": 2,
+            "required_traversal": "Company → SUPPLIES_TO → Company",
+            "expected_answer_contains": [
+                "Apple",
+                "billion",
+                "contract"
+            ],
+            "category": "financial_analysis"
+        },
+        {
+            "id": 7,
+            "question": "Which raw materials are single-sourced from countries with geopolitical risk scores above 7?",
+            "expected_hops": 2,
+            "required_traversal": "Material → EXTRACTED_IN → Country (filtered)",
+            "expected_answer_contains": [
+                "China",
+                "DRC"
+            ],
+            "category": "risk_assessment"
+        },
+        {
+            "id": 8,
+            "question": "If the Taiwan Strait is blocked, what percentage of global smartphone production halts?",
+            "expected_hops": 4,
+            "required_traversal": "Country → Company → Component → Device",
+            "expected_answer_contains": [
+                "Taiwan",
+                "TSMC",
+                "percent"
+            ],
+            "category": "geopolitical_analysis"
+        },
+        {
+            "id": 9,
+            "question": "Compare the supply chain resilience of iPhone 16 Pro vs Samsung Galaxy S25 Ultra.",
+            "expected_hops": 3,
+            "required_traversal": "Device → Component → Company (cross-compared)",
+            "expected_answer_contains": [
+                "iPhone",
+                "Samsung",
+                "single-source"
+            ],
+            "category": "comparative_analysis"
+        },
+        {
+            "id": 10,
+            "question": "What is the price breakdown of an iPhone 16 Pro by component cost?",
+            "expected_hops": 2,
+            "required_traversal": "Device ← USED_IN ← Component",
+            "expected_answer_contains": [
+                "processor",
+                "display",
+                "memory",
+                "cost"
+            ],
+            "category": "cost_analysis"
+        },
+        {
+            "id": 11,
+            "question": "Which countries would be most economically impacted by a global smartphone production halt?",
+            "expected_hops": 3,
+            "required_traversal": "Device → Component → Company → Country",
+            "expected_answer_contains": [
+                "Taiwan",
+                "South Korea",
+                "China"
+            ],
+            "category": "geopolitical_analysis"
+        },
+        {
+            "id": 12,
+            "question": "How does the China Gallium export restriction of 2023 ripple through to affect European phone manufacturers?",
+            "expected_hops": 5,
+            "required_traversal": "RiskEvent → Material → Component → Device → Company → Country",
+            "expected_answer_contains": [
+                "Gallium",
+                "China",
+                "restriction"
+            ],
+            "category": "disruption_analysis"
+        },
+        {
+            "id": 13,
+            "question": "What are the top 3 hidden chokepoints that PageRank analysis reveals in the supply chain?",
+            "expected_hops": 0,
+            "required_traversal": "Graph algorithm (PageRank)",
+            "expected_answer_contains": [
+                "PageRank",
+                "critical"
+            ],
+            "category": "centrality_analysis"
+        },
+        {
+            "id": 14,
+            "question": "Which supply chain communities/clusters does community detection reveal?",
+            "expected_hops": 0,
+            "required_traversal": "Graph algorithm (Community Detection)",
+            "expected_answer_contains": [
+                "community",
+                "cluster"
+            ],
+            "category": "community_analysis"
+        },
+        {
+            "id": 15,
+            "question": "What regulations currently restrict materials needed for 5G chip manufacturing?",
+            "expected_hops": 3,
+            "required_traversal": "Regulation → Material → Component",
+            "expected_answer_contains": [
+                "regulation",
+                "restrict"
+            ],
+            "category": "regulatory_analysis"
+        },
+        {
+            "id": 16,
+            "question": "If Rare Earth Elements supply drops 50%, which smartphone brands are affected first and why?",
+            "expected_hops": 4,
+            "required_traversal": "Material → Component → Device → Company",
+            "expected_answer_contains": [
+                "Rare Earth",
+                "brand"
+            ],
+            "category": "disruption_analysis"
+        },
+        {
+            "id": 17,
+            "question": "What is ASML's role in the supply chain and why is it irreplaceable?",
+            "expected_hops": 3,
+            "required_traversal": "Company → SUPPLIES_TO → Company → Component",
+            "expected_answer_contains": [
+                "ASML",
+                "lithography",
+                "EUV"
+            ],
+            "category": "company_analysis"
+        },
+        {
+            "id": 18,
+            "question": "Rank all 6 smartphones by supply chain vulnerability score.",
+            "expected_hops": 3,
+            "required_traversal": "Device → Component → Company (aggregated risk)",
+            "expected_answer_contains": [
+                "vulnerability",
+                "risk",
+                "rank"
+            ],
+            "category": "risk_assessment"
+        },
+        {
+            "id": 19,
+            "question": "What is the fastest alternative supply chain path if TSMC and Samsung both shut down?",
+            "expected_hops": 4,
+            "required_traversal": "Company → Component → Device (excluding failed nodes)",
+            "expected_answer_contains": [
+                "alternative",
+                "path"
+            ],
+            "category": "resilience_analysis"
+        },
+        {
+            "id": 20,
+            "question": "Calculate the total market cap at risk if a magnitude 8 earthquake hits Taiwan.",
+            "expected_hops": 4,
+            "required_traversal": "Country → Company → market_cap (aggregated)",
+            "expected_answer_contains": [
+                "Taiwan",
+                "market cap",
+                "billion"
+            ],
+            "category": "financial_analysis"
+        }
+    ]
+}

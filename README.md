@@ -28,8 +28,15 @@ Gallium →[EXTRACTED_IN]→ China →[REQUIRED_FOR]→ A17 Pro Chip
 This project models the entire smartphone supply chain as a graph with **7 node types**, **10 relationship types**, and **real data** from public sources.
 
 **Runs 100% locally** — no cloud API keys needed. Uses [Ollama](https://ollama.com) + Llama 3 for LLM features.
-
+ Medium Article : https://medium.com/@abyakod/graphrag-finds-the-connections-your-rag-system-doesnt-know-are-missing-6f6e66e1a0bb
 ---
+<img width="956" height="428" alt="image" src="https://github.com/user-attachments/assets/b2dd9609-aa2b-456c-9a6e-1d32039e9dd8" />
+
+The Architecture 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/3e6dd69e-8ffe-4a2f-b7ed-4ae12edecb49" />
+
+The Graph Schema:
+<img width="407" height="206" alt="image" src="https://github.com/user-attachments/assets/1adc8562-5073-42a0-ade8-dcb0c68c2a37" />
 
 ## ⚡ Quick Start
 
